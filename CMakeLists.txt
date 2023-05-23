@@ -17,6 +17,6 @@ file(GLOB LIB ${PROJECT_SOURCE_DIR}/lib/*.so)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/add)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/multiple)
-
-link_libraries(multiple add)
 add_executable(app main.cpp)
+target_link_libraries(app multiple add) #动态库必须现生成可执行文件再链接
+# add_executable(app main.cpp)
